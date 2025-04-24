@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    img { width: 200px; height: auto; display: block; margin-bottom: 10px; }
+    .box-content { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>This is the best for summer and winter vication </h1>
+
+  <section class="product">
+    <div class="middle-text">
+      <h2>New Arrivals. <span>Best Selling of the month</span></h2>
+    </div>
+    <div class="product-content">
+      <div class="box">
+        <div class="box-img">
+          <img src="img/p1.webp" alt="" />
+        </div>
+        <div class="box-content">
+          <h3>Round Neck T-Shirt</h3>
+          <h4>New Design 2023</h4>
+          <div class="inbox">
+            <div>
+              
+              <a href="cloth1.html" class="price">₹342.00</a>
+            </div>
+            <div class="rating">
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="heart">
+          <i class="ri-heart-fill"></i>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="img/p2.webp" alt="" />
+        </div>
+        <div class="box-content">
+          <h3>Green dress - Dresses / Skirts</h3>
+          <h4>New Design 2023</h4>
+          <div class="inbox">
+            <div>
+              <a href="cloth1.html" class="price">₹400.00</a>
+            </div>
+            <div class="rating">
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="heart">
+          <i class="ri-heart-fill"></i>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="img/p3.webp" alt="" />
+        </div>
+        <div class="box-content">
+          <h3>Denim jacket - Light denim blue - Ladies</h3>
+          <h4>New Design 2023</h4>
+          <div class="inbox">
+            <div>
+              <a href="cloth1.html" class="price">₹640.00</a>
+            </div>
+            <div class="rating">
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="heart">
+          <i class="ri-heart-fill"></i>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-img">
+          <img src="img/p4.webp" alt="" />
+        </div>
+        <div class="box-content">
+          <h3>Buy DEDICATED Solid Sports Caps</h3>
+          <h4>New Design 2023</h4>
+          <div class="inbox">
+            <div>
+              <a href="cloth1.html" class="price">₹220.00</a>
+            </div>
+            <div class="rating">
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+              <a href="#"><i class="ri-star-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="heart">
+          <i class="ri-heart-fill"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <hr />
+
+  <div id="product-details">
+    <!-- JavaScript will fill this in dynamically -->
+  </div>
+
+  <button id="add-to-cart">Add to Cart</button>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+
+    const products = {
+      1: { name: "Product 1", price: 19.99, image: "images/product1.jpg" },
+      2: { name: "Product 2", price: 29.99, image: "images/product2.jpg" },
+    };
+
+    const product = products[productId];
+
+    if (product) {
+      document.getElementById('product-details').innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <h1>${product.name}</h1>
+        <p>Price: $${product.price}</p>
+      `;
+    } else {
+      document.getElementById('product-details').innerHTML = `<p>Product not found.</p>`;
+      document.getElementById('add-to-cart').style.display = 'none';
+    }
+
+    document.getElementById('add-to-cart').addEventListener('click', () => {
+      alert(`Added ${product.name} to cart!`);
+      // Optionally store in localStorage:
+      // let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      // cart.push(product);
+      // localStorage.setItem("cart", JSON.stringify(cart));
+    });
+  </script>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
